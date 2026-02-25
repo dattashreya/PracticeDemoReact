@@ -1,13 +1,13 @@
 import React from "react";
+import MyButton from "./MyButton";
 
 export default class World extends React.Component {
   render() {
     return(
-    <>
-      <h3>hello world </h3>
-      <span>
-        Prop name - {this.props.name}
-      </span>
-    </>);
+      <>
+        <h3>some text: {this.props.name}</h3>
+        <MyButton />
+      </>
+    );
   }
 }
