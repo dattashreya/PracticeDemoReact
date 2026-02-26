@@ -1,0 +1,54 @@
+import React, { Component } from 'react';
+import './style.css';
+
+export default class Hello extends Component {
+  render() {
+    return (
+      <div>
+        hello {this.props.name} 
+        <p>
+        - {this.props.heroName}
+        </p>
+        <p>
+         {this.props.children}
+        </p>
+      </div>
+    );
+  }
+}
+
+
+
+// -------- index.js
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import Hello from './Hello';
+import './style.css';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'React',
+      heroName: 'Hero'
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <Hello name={this.state.name} heroName={this.state.heroName} >
+          <button>click me</button>
+        </Hello>
+        <p>
+          Start editing to see some magic happen :)
+        </p>
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
+
+// ----------------- index.html
+<div id="root"></div>
